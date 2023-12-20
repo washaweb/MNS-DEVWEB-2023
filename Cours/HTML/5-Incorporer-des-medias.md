@@ -17,6 +17,7 @@ La balise `<audio>` est utilisée pour intégrer des fichiers audio dans une pag
     Votre navigateur ne prend pas en charge l'élément audio.
 </audio>
 ```
+
 - `controls` ajoute des contrôles de lecture (lecture, pause, volume, etc.) à l'élément audio.
 - La balise `<source>` permet de spécifier différents formats audio pour une compatibilité croissante.
 

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulaires HTML</title>
+</head>
+<body>
+  
+  <h1>Formulaires en HTML</h1>
+
+  <!-- toujours entourer un formulaire d'une balise form -->
+  <form id="form-contact" action="contact.php" method="GET">
+    <p>
+      <label for="firstname">Votre Prénom:</label>
+      <input id="firstname" type="text" name="firstname" placeholder="texte de remplacement...">
+    </p>
+    <p>
+      <label for="lastname">Votre Nom:</label>
+      <input value="toto" id="lastname" type="text" name="lastname">
+    </p>
+    <p>
+      <label>
+        <input checked id="civilite-mr" type="radio" name="civilite">
+        M
+      </label>
+      <label>
+        <input id="civilite-mme" type="radio" name="civilite">
+        Mme
+      </label>
+      <label>
+        <input id="civilite-dr" type="radio" name="civilite">
+        Dr
+      </label>
+    </p>
+    <p>
+      <label for="country">Pays:</label>
+      <select name="country" id="country">
+        <option selected value="">Choisir...</option>
+        <option value="fr">France</option>
+        <option value="lu">Luxembourg</option>
+        <option value="be">Belgique</option>
+      </select>
+    </p>
+    <p>
+      <label for="message">Votre message:</label>
+      <textarea name="message" id="message" cols="30" rows="10">Message par défaut...</textarea>
+    </p>
+    <p>
+      <label>
+        <input id="cgv" type="checkbox" name="cgv">
+        Valider les conditions générales
+      </label>
+    </p>
+  </form>
+
+  <!-- on peut faire plusieurs formulaires dans la page -->
+  <form id="form-newsletter" action="newsletter.php" method="POST">
+    <p>
+      <label for="email">Votre email:</label>
+      <input id="email" type="email" name="email" required>
+    </p>
+    <button type="submit">Valider</button>
+  </form>
+</body>
+</html>
