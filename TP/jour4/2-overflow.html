@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overflow</title>
+  <style>
+    /* premier exemple texte qui scrolle */
+    .container {
+      width: 200px;
+      height: 200px;
+      border: 2px solid red;
+      /* la propriété overflow controle le débordement du texte */
+      overflow: auto; /* visible, auto, hidden */
+    }
+    .content {
+      border: 2px solid green;
+      width: 400px;
+    }
+
+    /* deuxième exemple : card overlay */
+    .card-container {
+      position: absolute;
+      top: 20px;
+      right: 40px;
+      width: 200px;
+      height: 300px;
+      background-color: #e7e2e2;
+      border-radius: 16px;
+      box-shadow: 0 10px 8px rgba(0,0,0,.4);
+      overflow: hidden; /* masque le contenu qui dépasse */
+    }
+    .card-content {
+      padding: 20px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+    
+    .card-overlay {
+      position: absolute;
+      transition: all 0.3s ease;
+      top: 100%; /* positionné en dehors de la zone visible en top */
+      left: 0%;
+      width: 100%;
+      height: 100%;
+      opacity: 0; 
+      background-color: rgba(96, 117, 117, 0.8);
+    }
+
+    /* animation au survol du container de la carte sur les propriétés top et opacity */
+    .card-container:hover .card-overlay {
+      top: 0%;
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1>Overflow</h1>
+
+  <h2>Zone de texte scrollable</h2>
+  <div class="container">
+    <div class="content">
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, cumque? Voluptates ea quibusdam quaerat reprehenderit eaque esse excepturi maxime tenetur tempora veniam minus possimus doloribus, voluptate tempore ratione laborum iste.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, cumque? Voluptates ea quibusdam quaerat reprehenderit eaque esse excepturi maxime tenetur tempora veniam minus possimus doloribus, voluptate tempore ratione laborum iste.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, cumque? Voluptates ea quibusdam quaerat reprehenderit eaque esse excepturi maxime tenetur tempora veniam minus possimus doloribus, voluptate tempore ratione laborum iste.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, cumque? Voluptates ea quibusdam quaerat reprehenderit eaque esse excepturi maxime tenetur tempora veniam minus possimus doloribus, voluptate tempore ratione laborum iste.</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, cumque? Voluptates ea quibusdam quaerat reprehenderit eaque esse excepturi maxime tenetur tempora veniam minus possimus doloribus, voluptate tempore ratione laborum iste.</p>
+    </div>
+  </div>
+
+
+  <div class="card-container">
+    <div class="card-content">
+      <h2>Titre de la carte</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem perspiciatis temporibus at minima sunt.</p>
+      <button>Cliquez</button>
+    </div>
+    <div class="card-overlay"></div>
+  </div>
+</body>
+</html>

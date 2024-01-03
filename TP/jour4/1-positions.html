@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position absolute</title>
+
+  <style>
+    .box1, .box2 {
+      width: 50%;
+      /* height: 200px; */
+      border: 2px solid red;
+      background-color: pink;
+    }
+    
+    .box1 {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .box2 {
+      background-color: rgba(0, 255, 255, 0.5);
+      border-color: blue;
+      height: 200px;
+      position: absolute;
+      top: 0px;
+      left: 0;
+      transition: 2s;
+    }
+    .box2.move {
+      left: 400px;
+    }
+
+    /* Réaliser une modal */
+
+    /* création du overlay qui recouvre la mise en page pour créer un "voile"  et empêcher les clics en dehors de la modal */
+    .overlay {
+      position: fixed;
+      inset: 0; /* équivalent à : top: 0; left: 0; right: 0; bottom: 0; */
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 9999;
+      display: none;
+    }
+    .overlay.active {
+      display: block;
+    }
+
+    /* création de la boîte de dialogue */
+    .modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #fff;
+      box-shadow: 10px 10px 20px 0px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      width: 50%;
+    }
+
+    .button {
+      margin-top: 100px;
+    }
+  </style>
+</head>
+<body>
+  <!-- div en position relative -->
+  <div class="box1">
+    <p>Texte du parent Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia aut, minima fugiat nulla ducimus commodi doloremque laborum perferendis voluptate tenetur quos explicabo suscipit aliquam voluptates minus optio fugit voluptas officiis?</p>
+    <!-- div en position absolute -->
+    <div class="box2">div absolute ici</div>
+
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut quo dignissimos harum dolorem ducimus quod eum quos maiores quidem velit voluptatum voluptatem totam impedit vitae, pariatur earum, nemo nulla. Impedit.</p>
+  </div>
+  
+  <button class="button" type="button" onclick="showModal()">Afficher le popup</button>
+
+  <!-- application avec une modal -->
+  <div class="overlay">
+    <div class="modal">
+      <h2>Titre de la modal</h2>
+      <p>Vous avez un virus</p>
+      <button type="button" onclick="hideModal()">Cliquez ici pour être sauvé</button>
+    </div>
+  </div>
+
+  <script>
+    // on stocke une référence au div qui porte la classe '.overlay' dans une varialbe overlay
+    const divModal = document.querySelector('.overlay');
+    const box = document.querySelector('.box2');
+
+    // on écrit une fonction qui permet de changer le style du div.overlay pour display: block
+    function showModal() {
+      // overlay.style.display = 'block';
+      divModal.classList.add('active');
+      box.classList.add('move');
+    }
+    // on écrit une fonction qui permet de changer le style du div.overlay pour display : none
+    function hideModal() {
+      // overlay.style.display = 'none';
+      divModal.classList.remove('active');
+      box.classList.remove('move');
+    }
+  </script>
+</body>
+</html>

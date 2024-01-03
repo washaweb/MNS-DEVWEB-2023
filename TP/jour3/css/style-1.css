@@ -1,0 +1,5 @@
+
+    /* on utiliser la virgule pour sélectionner plusieur cibles */
+    h1, p {
+      font-style: italic;
+    }

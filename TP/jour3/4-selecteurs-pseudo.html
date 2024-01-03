@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pseudo-sélecteurs en CSS</title>
+
+  <style>
+    /* Les Pseudo sélecteurs permettent de styler des éléments ou des états,
+     qui ne sont pas directement écrits dans le code HTML.
+    Par exemple :
+     - l'état survolé par la souris d'un lien.
+    - L'état focus d'un input, çàd que le curseur est positionné à l'intérieur du champ de formulaire. 
+    - un paragraphe lorsqu'il est vide (':empty')
+    - un paragraphe qui contient un span (:has(span))
+    - un psueudo-élément d"une balise qui se trouve avant ou après la balise
+    */
+
+    /* pseudo-sélecteurs */
+    a {
+      display: inline-block;
+      padding: 10px 20px;
+      color: red;
+      background-color: rgba(255, 0,0,.2);
+      text-decoration: none;
+    }
+
+    /* état focus et état survolé */
+    a:focus,
+    a:hover {
+      color: white;
+      outline: none;
+      background-color:  rgba(255, 0,0,.8);
+      box-shadow: 0 0 20px -5px red;
+    }
+    /* on peut intéragir sur des éléments différents, par exemple un span qui se trouve dans un lien */
+    a:hover span {
+      /* le :hover sélectionne l'état survollé du a, mais applique les changements de style sur la balise span */
+      color: navy;
+    }
+
+    /* état au clic */
+    a:active {
+      color: white;
+      background-color: purple;
+    }
+    /* état visité */
+    a:visited {
+      color: #981a1a;
+    }
+    /* on utilise souvent les pseudos-classes sur les formulaires : */
+    #formulaire button[type="submit"] {
+      background-color: red;
+      color: white;
+      border: 4px solid transparent;
+    }
+
+    #formulaire button[type="submit"]:hover,
+    #formulaire button[type="submit"]:focus {
+      background-color: pink;
+      color: red;
+      border: 4px solid red;
+    }
+
+    /* mais on peut l'appliquer sur n'importe quelle balise : */
+    h1:hover {
+      color: red;
+    }
+    /* Les pseudos-éléments */
+    .boite {
+      text-align: center;
+      padding: 20px 100px;
+      background-color: rgb(90, 230, 220);
+    }
+
+    [target$="blank"]::after {
+      content:" ⇱";
+    }
+
+    .boite::before {
+      content: 'test ➜ 😅 ';
+    }
+
+    .boite::after {
+      display: inline-block;
+      content: '';
+      height: 20px;
+      width: 20px;
+      margin: 0 10px;
+      background-color: red;
+    }
+
+    /* Les pseudos-sélecteurs */
+
+    /* sélectionner la première instance d'un sélecteur */
+    /* .menu li:first-child */
+    .menu li:first-of-type {
+      color: red;
+    }
+
+    /* sélectionner la dernière instance du sélecteur */
+    .menu li:last-of-type {
+      color: blue;
+    }
+
+    /* sélectionner une instance du sélecteur par son numéro(index) */
+    .menu li:nth-of-type(3) {
+      color: orange;
+    }
+
+    /* sélection pair/impair (even/odd) */
+    /* .menu li:nth-of-type(even) {
+      color: pink;
+    }
+    .menu li:nth-of-type(odd) {
+      color: purple;
+    } */
+
+    .menu li:nth-of-type(3n + 5) {
+      color: darkolivegreen
+    }
+
+    .para:first-letter {
+      font-size: 40px;
+      color: red;
+    }
+
+    .para:first-line {
+      color: purple;
+      font-size: 20px;
+    }
+
+    p:empty {
+      height: 20px;
+      background-color: red;
+    }
+
+    p:has(span) {
+      background-color: pink;
+    }
+
+    p:not(.para) {
+      color: blue;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+    .py-3 {
+      padding-block: 30px;
+    }
+
+    p.text-center.py-3 {
+      /* sélectionne les paragraphes qui ont les deux classes text-center et py-3 */
+    }
+    p:not(.text-center.py-3) {
+      /* sélectionne les paragraphes qui n'ont pas les deux classes text-center et py-3 */
+      background-color: red;
+    }
+  </style>
+</head>
+<body>
+  <h1>Pseudo élements, pseudos-sélecteurs et pseudo-classes</h1>
+
+  <h2>Pseudo-classes</h2>
+  <ul>
+    <li><a href="#formulaire">Aller <span>au formulaire</span></a></li>
+    <li><a href="https://www.orange.fr" target="_blank">Voir le site</a></li>
+  </ul>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et labore quia dicta voluptates iusto? Nesciunt reiciendis asperiores fuga a architecto voluptatum possimus, eius deserunt fugiat? Et commodi itaque quo fugit.</p>
+  <form action="" id="formulaire">
+    <input type="text" name="message">
+    <button type="submit">Valider</button>
+  </form>
+
+  <h2>Pseudos-elements</h2>
+
+  <div class="boite">Text dans le div</div>
+
+  <h2>Pseudo-sélecteurs</h2>
+  
+  <ul class="menu">
+    <li>liste 1</li>
+    <li>liste 2</li>
+    <li>liste 3</li>
+    <li>liste 4</li>
+    <li>liste 5</li>
+    <li>liste 6</li>
+    <li>liste 7</li>
+    <li>liste 8</li>
+    <li>liste 9</li>
+    <li>liste 10</li>
+  </ul>
+
+  <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius quia dolores, odit autem deserunt perferendis possimus earum officiis maiores. Officiis voluptate reprehenderit eveniet exercitationem illum, aliquid beatae cum optio placeat.</p>
+  
+  <!-- exemple de pseudo-selecteurs -->
+  <h2>Pseudos-sélecteurs</h2>
+  <p></p>
+  <p>ma phrase <span>avec un span</span> exemple.</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+
+  <h2>Exemple de classes multiples</h2>
+
+  <p class="text-center py-3">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam deleniti maiores quibusdam sed quod facilis non obcaecati aliquid nulla dolore accusamus tempore iure, expedita molestias assumenda nemo? Nam, aliquam asperiores.
+  </p>
+</body>
+</html>

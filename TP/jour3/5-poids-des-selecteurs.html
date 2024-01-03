@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poids des sélecteurs</title>
+  <style>
+    /* 
+    1) attribut style dans l'html : oui / non
+    2) #ID : 100
+    3) .class et attributs[] : 010
+    4) balise : 001
+     */
+
+     /* priority: 001 */
+     p {
+      color: green;
+     }
+     /* priority: 002 */
+     p + p {
+
+     }
+
+      /* priority: 010 */
+      .important {
+        color: blue;
+      }
+
+      /* priority: 100 */
+      #p2 {
+        color: orange;
+      }
+
+  </style>
+</head>
+<body>
+  <h1>Héritage et poids des sélecteurs</h1>
+
+  <p class="important" id="p1" style="color: green">paragraphe 1</p>
+  <p class="important" id="p2">
+    paragraphe 2
+    <span id="p3">
+      <span class="bleu">span</span>
+    </span>
+  </p>
+
+</body>
+</html>

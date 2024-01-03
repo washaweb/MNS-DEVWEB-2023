@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sélecteurs CSS</title>
+  <style>
+    /* pour les besoins du cours, je mets le code css directement ici dans la page, mais normalement il faudrait l'externaliser avec un fichier style.css */
+
+    /* sélectionner les balises */
+    div {
+      color: red;
+    }
+
+    /* on peut être plus spécifique : par exemple on sélectionne tous les h2 qui sont dans un div 
+    espace = "tous les enfants de..."
+    */
+    div h2 {
+      color: orange;
+    }
+
+    /* on peut créer une classe pour choisir sois-même les éléments à viser */
+    .maclasse {
+      color: #529dff;
+    }
+
+    /* on peut créer un identifiant unique pour choisir sois-même les éléments à viser */
+    #monidentifiantunique p {
+      color: purple;
+    }
+
+    /* Sélecteur d'attribut html */
+    [type="email"] {
+      border: 2px solid red;
+    }
+
+    /* 
+    [title="coucou"]  -> qui a la valeur exacte
+    [title^="cou"] -> qui commence par "cou"
+    [title*="cou"] -> qui contient ...
+    [title*="cou"] -> qui contient ...
+    [title$="cou"] -> qui fini par...
+     */
+     [title$="cou"] {
+      border: 2px solid blue;
+     }
+
+
+     /* sélecteur global */
+    * {
+      /* font-size: 40px; */
+    }
+  </style>
+</head>
+<body>
+  <h1>Sélecteurs CSS</h1>
+
+  <h2 title="coucou">Vilain petit canard</h2>
+
+  <a href="#">exemple de lien</a> <br>
+
+  <input title="cousin" type="text" name="moninput"> <br>
+  <input type="email" name="emain">
+
+  <div>
+    <h2 class="maclasse">Titre 2</h2>
+    <p title="quoicoubeh">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel reiciendis ipsum officia molestias, tenetur temporibus aspernatur vitae fugiat repellat adipisci, deserunt suscipit excepturi impedit cum accusantium rem maxime ex eligendi!</p>
+  </div>
+
+  <div id="monidentifiantunique">
+    <h2>Title</h2>
+    <p class="maclasse">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit consectetur quisquam dolores quasi veniam in vel, aspernatur, fuga quia rerum molestiae enim libero aliquam soluta doloremque, alias deleniti quidem necessitatibus.
+    </p>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur beatae fuga veniam dolorem maxime, praesentium excepturi unde illum illo laboriosam provident amet minima laborum iusto soluta dicta ex quod minus?
+    </p>
+  </div>
+
+  <div>
+    <h2>Titre 3</h2>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptate tempora esse magnam, recusandae soluta mollitia porro distinctio dolorum reiciendis provident expedita voluptatem voluptatibus fugiat odit aperiam et. Sed, odio? Odit!</p>
+  </div>
+
+</body>
+</html>

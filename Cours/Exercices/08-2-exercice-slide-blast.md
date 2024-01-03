@@ -22,7 +22,7 @@ Voici quelques indications de style :
 Indication pour le souligné du titre h2 :
 
 afin d'obtenir l'effet de souligné mot-à-mot du titre,
-voici le code CSS que vous devez utiliser, 
+voici le code CSS que vous devez utiliser,
 en plus des décoration d'arrière-plan et de padding..
 
 ```css
