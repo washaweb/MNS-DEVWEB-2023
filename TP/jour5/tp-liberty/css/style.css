@@ -1,0 +1,120 @@
+/* 
+  Sommaire :
+  1 - Reset
+  2 - Variables
+  3 - Typographie
+  4 - Header
+  5 - Footer
+  6 - Layout des sections
+      - Hero
+      - Our Work
+      - Pricing
+      - Contact
+*/
+
+/* 
+  1 - CSS Reset
+  -------------------------------------------------
+  Les fichiers CSS tels que [normalize.css](https://necolas.github.io/normalize.css/) ou [reset.css](http://meyerweb.com/eric/tools/css/reset/) ou https://gist.githubusercontent.com/marharyta/b83a3683085eb42867bbcefb34687af8/raw/3aa09648ad8bb144d8d0478668f92f5bcd537203/reboot.css (celui de bootstrap,
+  voir le fichier css/reboot.css :
+  @import url('reboot.css');
+  ici nous l'avons importé dans l'HTML avec un <link />
+*/
+
+/* 
+  2 - Variables
+  -------------------------------------------------
+*/
+
+:root {
+  --primary: #E74C3C;
+  --secondary: #3498DB;
+  --gray-darker: #2C3E50;
+  --gray-dark: #444444;
+  --gray: #4D5C6B;
+  --gray-light: #ABABAB;
+  --gray-lighter: #D5D5D5;
+  --primary-font: 'Roboto', sans-serif;
+  --secondary-font: 'Pontiac', sans-serif;
+}
+
+/* 
+  3 - Typographie
+  -------------------------------------------------
+*/
+
+@font-face {
+  font-family: 'Pontiac';
+  font-weight: 300;
+  font-style: normal;
+  src: url('../fonts/pontiac-light.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Pontiac';
+  font-weight: 500;
+  font-style: normal;
+  src: url('../fonts/pontiac-regular.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Pontiac';
+  font-weight: 700;
+  font-style: normal;
+  src: url('../fonts/pontiac-bold.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Pontiac';
+  font-weight: 900;
+  font-style: normal;
+  src: url('../fonts/pontiac-black.otf') format('opentype');
+}
+
+body {
+  font-family: var(--primary-font);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--secondary-font);
+  font-weight: 300;
+}
+
+a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+/* 
+  4 - Header
+  -------------------------------------------------
+*/
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--primary);
+}
+
+
+
+
+/* 
+  5 - Footer
+  -------------------------------------------------
+*/
+
+
+
+
+
+/* 
+  6 - Layout
+  -------------------------------------------------
+*/
