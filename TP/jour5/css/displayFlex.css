@@ -1,0 +1,39 @@
+/*
+Display: flex; permet de disposer les éléments enfants d'un conteneur qui a la propriété display: flex; en colonnes et / ou en lignes.
+*/
+
+/* décoratif */
+section {
+  border: 1px solid red;
+}
+
+/* conteneur flex */
+.flex-container {
+  border: 4px solid green;
+  /* on place la propriété sur le parent (ici main), pour contrôler ses enfants directs (ici les sections) */
+  display: flex;
+  flex-direction: row; /* row (par défaut) / column, row-reverse, column-reverse */
+  height: 600px;
+  justify-content: space-between; /* flex-start, flex-end, center, space-between, space-around, space-evenly */
+  align-items: stretch;
+  gap: 30px; /* espace entre les éléments, row et column
+  gap-row: 30px;
+  gap-column: 40px;
+  */
+  flex-wrap: wrap; /* nowrap / wrap */
+}
+
+section {
+  width: 20%;
+}
+/* avant-dernière colonne */
+section:nth-last-of-type(2) {
+  flex: 20% 1;
+}
+/* dernière colonne */
+section:last-of-type {
+  align-self: flex-end;
+  width: auto;
+  flex: 20% 2;
+  /* flex: flex-shrink flex-basis flex-grow; */
+}
