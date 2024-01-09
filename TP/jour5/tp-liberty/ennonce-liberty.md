@@ -34,14 +34,14 @@ Exercice noté Liberty: Reproduire au format HTML/CSS la maquette jointe à ces 
 - conteneur fluide, largeur totale de la fenêtre
 - hauteur: 68px
 - padding: 11px 42px
-- logo: Pontiac Black, 36px, approche -20, #fff
+- logo: Pontiac Black, 36px, letter-spacing -0.2px, #fff
 - navigation: Arial/Helvetica, 18px, #fff
 
 ## Hero
 
 - conteneur fluide, largeur totale de la fenêtre
 - hauteur min: 832px, hauteur max: 100vh - 68px
-- titre: Pontiac light 54px/70px approche -50, #fff
+- titre: Pontiac light 54px/70px approche -0.5px, #fff
 - bouton: Arial/Helvetica, 18px, #fff
 - marges entre les logo, titre et bouton: 60px
 - centrer les éléments logo + titre + bouton dans le cadre de l'image
@@ -50,7 +50,7 @@ Exercice noté Liberty: Reproduire au format HTML/CSS la maquette jointe à ces 
 
 - conteneur fixe, centré en largeur dans la fenêtre
 - espace avant la section de 120px
-- titre : Pontiac light 48px/62px approche -70, #4D5C6B
+- titre : Pontiac light 48px/62px approche -0.7px, #4D5C6B
 - texte sous le titre: Arial/Helvetica bold, 18px, #ABABAB
 - Les image doivent s'inscrivent dans la largeur du conteneur, largeur de vignette 270px, espace entre les - vignettes auto.
 
@@ -58,11 +58,11 @@ Exercice noté Liberty: Reproduire au format HTML/CSS la maquette jointe à ces 
 
 - conteneur fixe, centré en largeur dans la fenêtre
 - espace avant la section de 120px
-- titre : Pontiac light 48px/62px approche -70, #4D5C6B
+- titre : Pontiac light 48px/62px approche -0.7px, #4D5C6B
 - texte sous le titre: Arial/Helvetica bold, 18px, #ABABAB
 - Les colonnes s'inscrivent dans la largeur du conteneur, largeur de colonne 270px, espace entre les - colonnes auto.
 - les couleurs sont précisées en haut de document
-- Titre colonne: Pontiac light 36px/47px approche -70, #444444
+- Titre colonne: Pontiac light 36px/47px approche -0.7px, #444444
 - sous-titre de colonne: Arial/Helvetica bold, 16px/24px, #444444
 - texte de colonne : Arial/Helvetica, 16px/24, #444444
 - texte de bouton : Arial/Helvetica, 16px, #444444
@@ -72,7 +72,7 @@ Exercice noté Liberty: Reproduire au format HTML/CSS la maquette jointe à ces 
 - arrière-plan en conteneur fluide qui occupe toute la largeur de la fenêtre, mais la composition s'inscrit dans un conteneur fixe, centré en largeur dans la largeur de la fenêtre
 - espace avant la section de 120px
 - background: #2C3E50
-- titre : Pontiac light 48px/62px approche -70, #fff
+- titre : Pontiac light 48px/62px approche -0.7px, #fff
 - texte sous le titre: Arial/Helvetica bold, 18px, #ABABAB
 - Texte de formulaire: 14px/18px gris: #ABABAB
 - Envoi du formulaire en POST, page de traitement : contact.php

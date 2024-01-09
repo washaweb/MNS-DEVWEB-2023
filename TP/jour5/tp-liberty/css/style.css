@@ -27,6 +27,7 @@
 */
 
 :root {
+  --white: #fff;
   --primary: #E74C3C;
   --secondary: #3498DB;
   --gray-darker: #2C3E50;
@@ -73,6 +74,12 @@ body {
   font-weight: 300;
   font-size: 16px;
   line-height: 1.2;
+
+  /* prévisualiser la maquette */
+  background: linear-gradient(#FFFFFFc0, #ffffffc0),
+  url(../liberty-home-todo.jpg) no-repeat center top;
+  /* max-width: 1280px;
+  margin: 0px auto; */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -99,11 +106,34 @@ a:focus {
 .main-header {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: var(--primary);
+  padding: 11px 42px;
 }
 
+.main-header .brand {
+  margin: 0;
+  text-transform: uppercase;
+  color: var(--white);
+  font-size: 36px;
+  line-height: 46px;
+  letter-spacing: -0.2px;
+  font-weight: 900;
+}
 
+.main-header nav ul {
+  display: flex; /* permet de mettre les li à l'horizontale en colonnes */
+  list-style-type: none; /* supprime l'apparence par défaut des puces */
+  margin: 0; /* neutralise la marge par défaut du ul*/
+  padding: 0;
+  gap: 20px; /* espace les éléments */
+}
 
+.main-header nav ul li a {
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 18px;
+}
 
 /* 
   5 - Footer
@@ -118,3 +148,28 @@ a:focus {
   6 - Layout
   -------------------------------------------------
 */
+
+#hero {
+  /* background: color url() repeat position-h position-v/size-h size-v */
+  background: url('../imgs/hero-image.jpg') no-repeat center/cover;
+  height: calc(100vh - 68px);
+  text-align: center;
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#hero h2 {
+  color: var(--white);
+  font: normal 300 54px / 70px var(--secondary-font);
+  max-width: 920px;
+  /* 
+  font = raccourcis pour ces valeurs :
+  font-style: normal;
+  font-weight: 300;
+  font-size: 54px;
+  line-height: 70px;
+  font-family: var(--secondary-font); */
+}
