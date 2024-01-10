@@ -16,7 +16,7 @@ section {
   height: 600px;
   justify-content: space-between; /* flex-start, flex-end, center, space-between, space-around, space-evenly */
   align-items: stretch;
-  gap: 30px; /* espace entre les éléments, row et column
+  gap: 20px; /* espace entre les éléments, row et column
   gap-row: 30px;
   gap-column: 40px;
   */
@@ -26,14 +26,4 @@ section {
 section {
   width: 20%;
 }
-/* avant-dernière colonne */
-section:nth-last-of-type(2) {
-  flex: 20% 1;
-}
-/* dernière colonne */
-section:last-of-type {
-  align-self: flex-end;
-  width: auto;
-  flex: 20% 2;
-  /* flex: flex-shrink flex-basis flex-grow; */
-}
+
