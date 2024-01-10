@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exercice Flex</title>
+  <style>
+    :root {
+      /* Exemple d'utilisation de variables */
+      --white: #fff;
+      --denim: #2e5eaaff;
+      --keppel: #30b09dff;
+      --celadon: #b9e3b5ff;
+      --xanthous: #ffbc42ff;
+      --raspberry: #d81159ff;
+    }
+
+    /* RESET :
+    Je style les propriétés globales de mon document 
+    *********************************************************** */
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      /* reset des valeurs par défaut du body */
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 16px;
+      line-height: 20px;
+    }
+
+    /* header et footer */
+
+    .main-header, footer {
+      height: 100px;
+      background-color: var(--keppel);
+      padding: 20px;
+      display: flex;
+      align-items: center;
+    }
+
+    /* pour le mobile */
+    .main-header {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    /* pour les écrans au delà d'une largeur de 768px */
+    @media screen and (min-width: 768px){
+      .main-header {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 20px;
+      }
+    }
+
+
+    footer {
+      justify-content: center;
+    }
+
+    .main-header h1 {
+      margin: 0;
+    }
+    .main-header .menu {
+      margin: 0;
+      padding: 0;
+      list-style-type: none;
+      display: flex;
+    }
+
+    .main-header .menu a,
+    .container button {
+      display: block;
+      padding: 7px 18px;
+      background-color: var(--raspberry);
+      color: var(--white);
+      text-decoration: none;
+      transition: .3s;
+    }
+    .main-header .menu a:hover,
+    .main-header .menu a:focus,
+    .container button:hover,
+    .container button:focus {
+      background-color: var(--white);
+      color: var(--raspberry);
+    }
+
+    
+
+    /* contenu */
+    /* solution 1 régler la hauteur avec un calcul */
+    /* main {
+      min-height: calc(100vh - 200px);
+    } */
+    /* solution 2 utiliser le flex sur le body */
+    body {
+      display: flex;
+      flex-direction: column;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    main {
+      /* le flex 1 règle la hauteur de l'élément à l'espace disponible dans le conteneur flex */
+      flex: 1;
+      display: flex;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--celadon);
+    }
+
+    .container button {
+      border: none;
+      cursor: pointer;
+    }
+    
+    /* ----------------- enoncé ------------------------ */
+    /* à l'aide de conteneurs flexs, réaliser la disposition suivante :
+    
+    - le header et le footer doivent avoir une hauteur de 200px;
+    - le main doit avoir le reste de la hauteur de fenêtre (çàd occuper tout l'écran moins la hauteur du header, footer)
+    - styler le bouton et le centrer verticalement et horizontalement dans son conteneur
+
+    - Réaliser un menu horizontal avec la navigation
+    - Disposer le title horizontalement à gauche, la navigation à droite, le tout centré verticalement dans le header
+    */
+  </style>
+</head>
+<body>
+  <header class="main-header">
+    <h1 class="title">Ma compagnie</h1>
+    <nav class="main-nav">
+      <ul class="menu">
+        <li><a href="#">Lien 1</a></li>
+        <li><a href="#">Lien 2</a></li>
+        <li><a href="#">Lien 3</a></li>
+        <li><a href="#">Lien 4</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <div class="container">
+      <div>
+        <button>Mon bouton</button>
+        
+      </div>
+    </div>
+  </main>
+  <footer>
+    © 2023 - MNS CSS Flex
+  </footer>
+</body>
+</html>
