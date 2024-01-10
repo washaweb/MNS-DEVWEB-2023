@@ -32,9 +32,9 @@
     background : lightblue;
     transform  : rotateY(-180deg);
 }
-.card-container:hover .card-front {
+.card-container.active .card-front {
     transform : rotateY(180deg);
 }
-.card-container:hover .card-back {
+.card-container.active .card-back {
     transform : rotateY(0deg);
 }

@@ -24,6 +24,23 @@
         </div>
     </div>
 
+    <script>
+        const cards = document.querySelectorAll('.card-container');
+        
+        // pour chaque card des cards
+        for (const card of cards) {
+            // on assigne un écouteur d'événement au click à chaque card
+            card.addEventListener('click', toggleCard)
+        }
 
+        // la fonction qui sera exécutée au clic sur la card
+        function toggleCard(e) {
+            e.preventDefault()
+            // this fait référence à l'élément cliqué card
+            this.classList.toggle('active');
+        }
+        console.log(cards);
+
+    </script>
 </body>
 </html>

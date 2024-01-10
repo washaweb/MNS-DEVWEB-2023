@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cody</title>
+
+  <style>
+    .cody {
+      background-color: #e368f0;
+      color: #fff;
+      width: 120px;
+      height: 120px;
+      line-height: 110px;
+      font-size: 70px;
+      text-align: center;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: 1s;
+      position: absolute;
+      top: calc(50% - 60px);
+      left: calc(50% - 60px);
+    }
+
+    /* Les transformations permettent de déplacer, faire tourner ou déformer un élément */
+
+    .cody {
+      /* transform origin permet de modifier le centre de la transformation par rapport à l'élément qui est visé */
+      transform-origin: center center;
+
+      /* rotate permet de faire pivoter l'élément s'exprime en degrés deg 0 à 359 */
+      transform: rotate(90deg);
+      transform: scale(1.5);
+      transform: scalex(1.5); /* déformation horizontale */
+      transform: scaley(1.5); /* déformation vertical */
+      transform: skew(0, 30deg); /* skew(axe h, axe v) en degrés */
+      transform: translate(-50%, -50%); /* translation = déplacement sur l'axe x et y (en px, %...) */
+      transform: translatex(-50%);
+      transform: translatey(0);
+
+      transform: matrix(1, 0.9, -0.9, 1, 30, 10);
+
+      transform: rotate3d(-1, -1, -1, 60deg);
+    }
+
+    .cody:hover {
+      transform: scale(2);
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div class="cody">:)</div>
+</body>
+</html>
