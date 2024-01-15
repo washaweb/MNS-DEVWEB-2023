@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Révision hover</title>
+  <style>
+
+    /* conteneur qui limite la largeur et centre les éléments */
+    .col {
+      width: 25%;
+      margin: 60px auto;
+    }
+
+    /* ma card */
+    .card {
+      border: 1px solid gray;
+      border-radius: 8px;
+      box-shadow: 5px 20px 20px -20px rgba(0,0,0, .5);
+    }
+
+    .card .header {
+      min-height: 300px;
+      border-bottom: 1px solid gray;
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card .content {
+      padding: 20px;
+    }
+
+    .card .header-overlay {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      /* height: 100%; */
+      opacity: 0;
+      background-color: rgba(255, 0, 0, 0.4);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 500ms ease;
+    }
+
+    /* au survol de la carte, je veux modifier l'un des éléments enfants de cette carte */
+    .card:hover .header-overlay {
+      top: 0;
+      opacity: 1;
+    }
+
+    .card .header-overlay .search-icon {
+      height: 60px;
+      width: 60px;
+      opacity: 0;
+      /* on ajoute une transition pour qu'il y ait une interpolation du mouvement */
+      will-change: transform, opacity; /* ce qu'on va animer */
+      transition-property: transform, opacity; /* on définit la propriété qui sera animée */
+      transition-duration: 500ms, 200ms; /* en secondes (s) ou millisecondes (ms) */
+      transition-timing-function: cubic-bezier(0.860, 0.000, 0.070, 1.000); /* courbe d'animation easeInOutQuint -> https://matthewlein.com/tools/ceaser */
+      /* transition-delay: 1s; */ /* on peut mettre un délais */
+      /* transformation de départ, avant le hover */
+      transform: scale(.5) rotate(-359deg);
+
+
+      /* ici ce sont des propriétés spécial du svg */
+      fill: #000;
+      stroke: #000;
+      /* end */
+    }
+
+    .card:hover .header-overlay .search-icon{
+      opacity: 1;
+      transform: scale(1) rotate(0);
+      transition-duration: 1s, 200ms;
+    }
+
+  </style>
+</head>
+<body>
+  
+  <div class="col">
+    <div class="card">
+      <div class="header">
+        test
+        <!-- ici cet élément n'apparaitra qu'au moment du survol de la carte -->
+        <div class="header-overlay">
+          <!-- ici un icon svg qui vient de fontawesome, j'ai ajouté la classe search-icon -->
+          <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" height="16" width="16" viewBox="0 0 512 512">
+            <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/>
+          </svg>
+        </div>
+
+      </div>
+      <div class="content">
+        <ul>
+          <li>item 1</li>
+          <li>item 2</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

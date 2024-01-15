@@ -7,12 +7,14 @@
     transform-style : preserve-3d;
     border          : 1px solid #ccc;
 }
+
 .card {    
     transition              : 0.6s;
     transform-style         : preserve-3d;
     position                : relative;
     cursor: crosshair;
 }
+
 .card-front, .card-back {
     -webkit-backface-visibility : hidden;
     backface-visibility         : hidden;
@@ -23,6 +25,7 @@
     top                         : 0;
     left                        : 0;
 }
+
 .card-front {
     background : lightgreen;
     z-index    : 2;

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation css</title>
+
+  <style>
+    .cody {
+      background-color: #e368f0;
+      color: #fff;
+      width: 120px;
+      height: 120px;
+      line-height: 110px;
+      font-size: 70px;
+      text-align: center;
+      border-radius: 20px;
+      transition: 1s;
+      position: absolute;
+      top: calc(50% - 60px);
+      left: calc(50% - 60px);
+    }
+
+
+    /* on créer une classe d'animation */
+    /* les transitons css servent pour interpoler les changement d'état, les animations quant à elles servent à créer des keyframes et animer des élément au chargement de la page, ou à l'attribution d'une classe (avec javascript). */
+    .anim-move {
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      animation-name: move;
+      animation-duration: 5s;
+      animation-timing-function: ease;
+      animation-delay: 1s;
+      animation-iteration-count: 1;
+      animation-direction: normal; /* normal, reverse, alternate, alternate-reverse*/
+      animation-fill-mode: both; /* none, forwards, backwards, both */
+    }
+
+    .anim-fade {
+      /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+      animation-name: fade;
+      animation-duration: 1s;
+      animation-timing-function: ease;
+      animation-delay: 0;
+      animation-iteration-count: 1;
+      animation-direction: normal; /* normal, reverse, alternate, alternate-reverse*/
+      animation-fill-mode: both; /* none, forwards, backwards, both */
+      
+      /* on peut aussi utiliser la propriété animate pour tout définir en une fois */
+      animation: fade 1s ease 0 1 normal both;
+    }
+
+    @keyframes move {
+      0% {
+        /* position initiale */
+        left: 0;
+        top: calc(50% - 60px);
+        /* opacité de départ */
+        opacity: 0;
+      }
+      20% {
+        /* valeurs intermédiaires */
+        top: 0;
+        opacity: 1;
+      }
+      40% {
+        /* valeur intermédiaire juste le top */
+        top: 100%;
+        transform: rotate(90deg);
+      }
+      60% {
+        /* valeur intermédiaire juste le top */
+        top: calc(50% - 60px);
+      }
+      70% {
+        /* valeurs intermédiaires */
+        opacity: 1;
+      }
+      100% {
+        /* position d'arrivée */
+        left: 100%;
+        /* opacité d'arrivée */
+        opacity: 0;
+        transform: rotate(270deg);
+      }
+    }
+
+    @keyframes fade {
+      from {
+        /* opacité initiale */
+        opacity: 0;
+      }
+      to {
+        /* opacité d'arrivée */
+        opacity: 1;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Animation avec animate et les keyframes</h1>
+  
+  <div class="cody anim-move">:)</div>
+  <div class="cody anim-fade">:)</div>
+
+
+</body>
+</html>
