@@ -9,6 +9,58 @@
       font-family: Arial, Helvetica, sans-serif;
       font-size: 20px;
     }
+
+    .anim-1 {
+      /* ici j'utilise 2 animations inLeft pour le mouvement, et fade pour l'opacité */
+      animation-name: inLeft, fade;
+      animation-duration: 3s, 2s; /* comme j'ai 2 animation, je dois préciser la durée en s pour chaque animation */
+      animation-delay: 0s, 1s; /* de même pour le délais, ici 0s pour le inLeft, et 1s pour le fade */
+      opacity: 0; /* je prépare les li pour qu'elles soient masquées par défaut */
+      animation-fill-mode: forwards; /* je précise que la li doit restées dans l'état de fin de l'animation, çad avec une opacité de 1 */
+    }
+
+    .anim-2 {
+      animation-name: fade;
+      animation-duration: 1s;
+    }
+
+    .animation-list li {
+      animation-name: inLeft, fade;
+      animation-duration: 3s, 3s;
+      animation-delay: 0s, 2s;
+      opacity: 0;
+      animation-fill-mode: forwards;
+    }
+    
+    .animation-list li:nth-of-type(2) {
+      animation-delay: 1s, 3s;
+    }
+    .animation-list li:nth-of-type(3) {
+      animation-delay: 2s, 4s;
+    }
+
+    /* ici la définition de l'animation inLeft */
+    @keyframes inLeft {
+      /* état du début de l'animation */
+      from {
+        transform: translateX(-100%);
+      }
+      /* état de la fin de l'animation */
+      to {
+        transform: translateX(0%);
+      }
+    }
+
+    /* ici la définition de l'animation fade */
+    @keyframes fade {
+     /* on peut aussi utilise des pourcentages */
+     0% {
+      opacity: 0;
+     } 
+     100% {
+      opacity: 1;
+     }
+    }
   </style>
 </head>
 <body>
@@ -18,7 +70,7 @@
     <h2 class="anim-2">Animer le h2 pour qu'il arrive en "fade", çàd en transition d'opacité de 0 à 1</h2>
 
 
-    <!-- ici, utiliser la même animation que pour le titre 1, mais chaque liste (li) doit apparaître avec un délay de .2s par rapport à la précédente 
+    <!-- ici, utiliser la même animation que pour le titre h1, mais chaque liste (li) doit apparaître avec un délay de .2s par rapport à la précédente 
       
     (astuce, utiliser les pseudo-classes pour viser chaque li)  -->
     <ul class="animation-list">
