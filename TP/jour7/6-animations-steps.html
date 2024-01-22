@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      background-color: rgb(16, 129, 171);
+    }
+    /* fumée */
+    .smoke {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      width: 362px;
+      height: 422px; /* <--  taille d'une seule image de l'animation, vous pouvez le régler selon vos besoins */
+      background-image: url('imgs/smoke.webp'); /* <-- url to spritesheet */
+      animation: smoke-anim 2s steps(24) infinite; /* <-- animation */
+      opacity: 0.8; /* transparence supplémentaire */
+    }
+
+/* keyframe animation en CSS pour la fumée */
+
+@keyframes smoke-anim {
+  from {
+    background-position: -1px -1px;
+  }
+  to {
+    background-position: -8689px -1px;
+  } /* <-- width of spritesheet*/
+}
+    
+    
+    /* birds */
+
+    .birds {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); /*positionnerl le div par son centre*/
+      
+      /* ici les caractéristiques de mon animation */
+      width: 60px; /* la largeyr de l'image originale divisée par le nombre de tiles */
+      height: 54px; /* la hauteur de l'image originale */
+      background: url(imgs/bird-anim-1.png); /*l'image à animer*/
+      background-position: 0 0; /* on commence par la première image, et on va utiliser une animation css pour faire bouger la position de l'arrière-plan */
+      animation: birds1 1s infinite;
+      animation-timing-function: steps(8); /* la fonction d'animation en step, permet de faire une animation qui agit en étapes, en fait, dans cet exemple, on décale le background sur les x en 8 étapes */
+    }
+
+    @keyframes birds1 {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 640px 0; /* la position x correspond à la largeur de l'image */
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Utiliser animation-timing-function: steps(nbretapes);</h1>
+  <div class="smoke"></div>
+  <div class="birds"></div>
+</body>
+</html>

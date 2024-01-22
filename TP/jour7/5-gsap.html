@@ -4,9 +4,58 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Animer en JS</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+      position: absolute;
+    }
+    .box:nth-child(2) {
+      top: 130px;
+    }
+    .box:nth-child(3) {
+      top: 240px;
+    }
+
+    .btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 2;
+    }
+  </style>
 </head>
 <body>
-  Voir ici <a href="https://gsap.com/">https://gsap.com/</a>
+  
+  <div class="box"></div>
+  <div class="box"></div>
+  <div class="box"></div>
+  
+  <p>Voir ici <a href="https://gsap.com/">https://gsap.com/</a></p>
+  <button type="button" class="btn">Animer</button>
+  <!-- d'abord on charge le fichier gsap -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <!-- ensuite mon propre script -->
+  <script>
+    // on crée un objet timeline
+    const tl = gsap.timeline()
+    // ici on lui donne des instructions d'animation
+    tl.to(".box", { x: "+=300", y: "+=300", scale: 0.1, duration: 2, ease: "back.out", stagger: 0.2, })
+    tl.to(".box", { x: "-=300", y: "-=300", scale: 1, duration: 2, delay: 1, ease: "back.out", stagger: 0.2, }, 2)
+    // on met la timeline en pause
+    tl.pause();
+
+    // on crée une fonction pour lancer l'animation
+    function animate(){
+      tl.restart()
+    }
+    // je vise le bouton dans le document
+    const btn = document.querySelector(".btn")
+    // j'attribue l'action au click sur le bouton
+    btn.addEventListener('click', animate)
+
+  </script>
 </body>
 </html>
 

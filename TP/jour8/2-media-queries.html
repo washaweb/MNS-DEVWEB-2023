@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les medias queries en CSS</title>
+  <style>
+    /* Quand on parle de media queries, il faut tenir compte des différentes tailles d'écrans, on appelle ça des breakpoints
+    350px -> 450px Mobiles
+    450px -> 768pw Petites tablettes
+    768px -> 980pw Tablettes
+    980px -> 1024px Tablettes (mode landscape)
+    1024px -> 1280px Ordinateurs avec des petits écrans
+    1280px et + (1440px, 1920px)  Ordinateurs avec des petits écrans
+
+    Pour faire face à toutes ces variantes, on doit adapter notre design
+    sachant que environ 60 à 70% du traffic se fait sur mobile.
+
+    On utilise pour cela les medias queries, et une technique reconnue qui permet d'optimiser ses medias-queries qui s'appelle le MFRS
+    (Mobile First Responsive Design)
+
+    */
+    /* mobile fist signifie qu'on commence avec la css pour le mobile */
+    .container {
+      max-width: 100%; /*sur mobile 100%*/
+      margin: 20px auto;
+      border: 2px dashed red;
+    }
+    /* puis on monte en taille pour chaque support */
+    /* à partir de la taille 768px et +, applique cette règle CSQ */
+    @media screen and (min-width: 768px) {
+      .container {
+        max-width: 740px;
+      }
+    }
+    /* à partir de la taille 980px et +, applique cette règle CSQ */
+    @media screen and (min-width: 980px) {
+      .container {
+        max-width: 920px;
+      }
+    }
+    @media screen and (min-width: 1280px) {
+      .container {
+        max-width: 1170px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+  <div class="container">
+    <h1>Titre de la page</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo omnis nam qui necessitatibus alias a blanditiis ad eius quibusdam voluptatibus! Officiis delectus explicabo adipisci? Excepturi beatae laborum suscipit dolor tenetur?</p>
+  </div>
+</body>
+</html>
