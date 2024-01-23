@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page avec un bootstrap perso</title>
+
+  <!-- ici on charge bootstrap depuis le dossier local de bootstrap qu'on a téléchargé depuis le site https://getbootstrap.com/docs/5.3/getting-started/download/ -->
+   <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+
+  <h1>Hello, world!</h1>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+
+        <form>
+          <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          </div>
+          <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+          </div>
+          <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+      </div>
+      <div class="col">
+        <a class="btn btn-primary" href="#">Bouton</a>
+        <a class="btn btn-secondary" href="#">Bouton</a>
+        <a class="btn btn-warning" href="#">Bouton</a>
+        <a class="btn btn-danger" href="#">Bouton</a>
+        <a class="btn btn-info" href="#">Bouton</a>
+        <a class="btn btn-success" href="#">Bouton</a>
+      </div>
+    </div>
+  </div>
+
+  
+<!-- ici les scripts téléchargés dans le dossier bootstrap -->
+  <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
