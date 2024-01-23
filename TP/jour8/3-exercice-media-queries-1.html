@@ -34,29 +34,6 @@
       }
     }
 
-    /* contenu */
-
-    .container {
-      max-width: 1070px;
-      margin: 0px auto;
-    }
-    .row {
-      display: flex;
-      gap: 20px;
-    }
-
-    .col-content {
-      flex: 1;
-    }
-    .col-aside {
-      background-color: cyan;
-      width: 240px;
-    }
-    .col-aside-2 {
-      background-color: #00ffae;
-      width: 180px;
-    }
-
     /* Exercice 2: sur la partie contenu de la page, modifier les colonnes pour qu'elles saffichent différemment sur mobile et sur tablette */
 
     /* sur mobile, 1 seule colonne largeur 100% pour les 3 colonnes contenu, aside-1 et aside 2, attention, la newsletter doit apparaître en premier, puis le contenu, puis, la navigation,
@@ -67,6 +44,66 @@
 
     /* sur desktop, on utilisera la mise en page actuelle (3 colonnes : contenu (flex: 1), aside-1 (240px), aside-2 (180px)) */
     
+    
+    /* contenu
+    ****************************
+    */
+
+    .container {
+      max-width: 1070px;
+      margin: 0px auto;
+    }
+    
+    .row {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .col-aside {
+      order: -1;
+      background-color: cyan;
+    }
+    .col-aside-2 {
+      background-color: #00ffae;
+    }
+
+    /* pour les tablettes */
+    @media (min-width: 768px) { /* à partir de 768px et + */
+      .row {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .col-content {
+        width: 100%;
+      }
+      .col-aside{
+        order: 0;
+      }
+
+      .col-aside,
+      .col-aside-2 {
+        width: calc(50% - 10px);
+      }
+    }
+
+    /* pour les écrans PC */
+    @media (min-width: 1024px) { /* à partir de 1024px et + */
+      .row {
+        flex-wrap: nowrap;
+      }
+      .col-content {
+        width: auto;
+        flex: 1;
+      }
+      .col-aside {
+        width: 240px;
+      }
+      .col-aside-2 {
+        width: 180px;
+      }
+    }
+
   </style>
 </head>
 <body>
