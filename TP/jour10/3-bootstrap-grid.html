@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La grille de Bootstrap</title>
+
+  <link rel="stylesheet" href="css-bootstrap/style.css">
+</head>
+<body>
+  <h1>La grille de Bootstrap</h1>
+  <h2>Les conteneurs</h2>
+
+  <div class="container-sm bg-secondary">100% wide until small breakpoint</div>
+  <div class="container-md bg-secondary">100% wide until medium breakpoint</div>
+  <div class="container-lg bg-secondary">100% wide until large breakpoint</div>
+  <div class="container-xl bg-secondary">100% wide until extra large breakpoint</div>
+  <div class="container-xxl bg-secondary">100% wide until extra extra large breakpoint</div>
+
+  <h2>Conteneur basique et fluide</h2>
+  <div class="container bg-secondary">
+    Exemple de conteneur normal
+  </div>
+  <div class="container-fluid bg-secondary">
+    Exemple de conteneur fluide
+  </div>
+
+  <h2>La grille</h2>
+
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        Colonne 1
+      </div>
+      <div class="col">
+        Colonne 2
+      </div>
+      <div class="col">
+        Colonne 2
+      </div>
+      <div class="col">
+        Colonne 2
+      </div>
+      <div class="col">
+        On peut mettre jusqu'à 12 colonnes sur une ligne
+      </div>
+    </div>
+  </div>
+
+  <h3>On peut controler la largeur d'une ou de plusieurs colonnes</h3>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-6">
+        <div class="bg-primary">Colonne 1</div>
+      </div>
+      <div class="col-4">
+        <div class="bg-primary">Colonne 2</div>
+      </div>
+      <div class="col-2 bg-secondary-subtle">
+        <div class="bg-primary">Colonne 3</div>
+      </div>
+    </div>
+  </div>
+
+  <h3>On peut controler la largeur sur plusieurs breakpoints pour gérer le responsive</h3>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-12 col-md-6 col-xl-2">
+        <div class="bg-primary">Colonne 1</div>
+      </div>
+      <div class="col-6 col-md-4 col-xl-5">
+        <div class="bg-primary">Colonne 2</div>
+      </div>
+      <div class="col-6 col-md-2 col-xl-5 bg-secondary-subtle">
+        <div class="bg-primary">Colonne 3</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

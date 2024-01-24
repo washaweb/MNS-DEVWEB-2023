@@ -1,0 +1,14 @@
+
+// Un mixin pour créer des variantes de boutons
+// les mixins sont comme des fonctions, on peut passer des paramètres
+@mixin createBtn($bgColor, $color) {
+  display: inline-block;
+  padding: 4px 16px;
+  text-decoration: none;
+  background-color: $bgColor;
+  color: $color;
+  &:hover,
+  &:focus {
+    background-color: rgba($bgColor, .4);
+  }
+}

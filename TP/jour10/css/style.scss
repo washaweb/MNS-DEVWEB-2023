@@ -1,0 +1,35 @@
+// en sass on peut importer des fichiers avec @import (sans le url() )
+// le fichier est alors intégré dans le fichier compilé final en css
+@import '_variables';
+@import '_mixins';
+
+
+body {
+  margin: 0;
+  font-family: $font-primary;
+}
+
+.menu {
+  margin:0;
+  padding: 0;
+  display: flex;
+  // background-color: $primary;
+  list-style-type: none;
+
+  // on peut imbriquer les selecteurs
+
+  li {
+    padding: 10px;
+    a {
+      @include createBtn($primary, $light);
+    }
+  }
+}
+
+section h2 {
+  color: $primary;
+}
+
+.btn {
+  @include createBtn(blue, $light);
+}

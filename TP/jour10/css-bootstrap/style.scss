@@ -1,0 +1,10 @@
+// je remplace les variables de Bootstrap
+$primary: #ae23ea;
+$enable-rounded: false;
+$enable-shadows: true;
+$enable-gradients: true;
+
+$box-shadow: 0 .5rem 1rem rgba($black, 1);
+
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
