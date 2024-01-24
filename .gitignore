@@ -5,7 +5,7 @@ Cours/Ressources/13-exercice-flex/4-corrige-exercice-flex.html
 
 **/node_modules/*
 **/bower_components/*
-
+.vscode/*
 # Ignore Mac system files
 .DS_Store
 
