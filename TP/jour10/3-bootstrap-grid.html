@@ -78,5 +78,52 @@
       </div>
     </div>
   </div>
+
+  <h3>On peut controler l'alignement vertical et horizontal des colonnes dans la row</h3>
+  <p>C'est comme un conteneur flex</p>
+
+  <div class="container">
+    <!-- la row agit comme un conteneur flex, on peut aligner l'axe principal et secondaire, utiliser du gap... -->
+    <div class="row justify-content-center align-items-center gap-3 bg-info-subtle" style="height: 400px">
+      <div class="col-4 bg-primary-subtle">
+        <h2 class="text-center">Mon titre centré</h2>
+        <p>Texte pas centré dans la colonne, la colonne est centrée dans la row</p>
+      </div>
+    </div>
+  </div>
+
+  <h3>Réordoner et mettre des espaces</h3>
+
+  <div class="container">
+    <div class="row">
+      <!-- order permet de réordonner les colonnes -->
+      <div class="col-4 order-2">
+        Colonne 1
+      </div>
+      <div class="col-4 order-1">
+        Colonne 2
+      </div>
+    </div>
+  <hr>
+    <div class="container">
+    <div class="row">
+      <!-- offset permet d'espacer d'un certain nombre de colonnes -->
+      <div class="offset-3 col-3 bg-primary">
+        Colonne 1
+      </div>
+      <div class="offset-2 col-4 bg-primary">
+        Colonne 2
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
 </body>
 </html>
